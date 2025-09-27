@@ -5,11 +5,13 @@ using UnityEngine.UI;
 using TMPro;
 public class BallScript : MonoBehaviour
 {
-    private int count;
+    private int count, selector;
     private Rigidbody rb;
     public float velocidade;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public AudioSource src;
+    public AudioClip Shaw, Regale, Guarana, Getgud, Edino;
 
     void Start()
     {
@@ -32,6 +34,32 @@ public class BallScript : MonoBehaviour
             other.gameObject.SetActive(false);
         count = count + 1;
         SetCountText();
+
+
+        selector = Random.Range(1, 5);
+        switch (selector)
+        {
+            case 1:
+                src.clip = Shaw;
+                src.Play();
+                break;
+            case 2:
+                src.clip = Regale;
+                src.Play();
+                break;
+            case 3:
+                src.clip = Guarana;
+                src.Play();
+                break;
+            case 4:
+                src.clip = Getgud;
+                src.Play();
+                break;
+            case 5:
+                src.clip = Edino;
+                src.Play();
+                break;
+        }
     }
 
     void SetCountText()
