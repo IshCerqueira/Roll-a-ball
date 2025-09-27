@@ -20,6 +20,7 @@ public class BallScript : MonoBehaviour
         velocidade = 5f;
         SetCountText();
         winTextObject.SetActive(false);
+        selector = 0;
     }
     void Update()
     {
@@ -64,8 +65,8 @@ public class BallScript : MonoBehaviour
 
     void SetCountText()
     {
-        countText.text = "Count: " + count.ToString();
-        if (count >= 4) 
+        countText.text = "Score: " + count.ToString();
+        if (count >= 10) 
             winTextObject.SetActive(true);
 
     }
