@@ -17,7 +17,7 @@ public class BallScript : MonoBehaviour
     {
         count = 0;
         rb = GetComponent<Rigidbody>();
-        velocidade = 5f;
+        velocidade = 2f;
         SetCountText();
         winTextObject.SetActive(false);
         selector = 0;
